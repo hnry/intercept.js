@@ -1,8 +1,8 @@
 {
-  "name": "testing-testing-1-2-3",
+  "name": "intercept.js",
   "private": false,
   "version": "0.0.1",
-  "description": "ERROR: No README.md file found!",
+  "description": "elegantly intercept a function",
   "main": "index.js",
   "dependencies": {
     "layer": "*"
@@ -12,7 +12,7 @@
     "should": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

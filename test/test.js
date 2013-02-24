@@ -1,8 +1,8 @@
 var layer = require('layer')
   , should = require('should')
-  , testing123 = require('../index.js');
+  , intercept = require('../index.js');
 
-describe('testing123', function() {
+describe('intercept', function() {
 
   it('stubs', function() {
     var ctx = {
@@ -10,7 +10,7 @@ describe('testing123', function() {
         throw new Error('hi got called');
       }
     }
-    var stub = testing123(ctx, ctx.hi);
+    var stub = intercept(ctx, ctx.hi);
     // stays false until ctx.hi is called
     stub().should.be.equal(false);
 

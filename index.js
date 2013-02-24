@@ -1,13 +1,13 @@
 'use strict';
 
-var testing123;
+var intercept;
 
 (function() {
 var env = '';
 if (typeof module !== undefined && module.exports) env = 'node';
-var layer = (env === 'node') ? require('../layer/index') : this.layer;
+var layer = (env === 'node') ? require('layer') : this.layer;
 
-testing123 = function (ctx, fn, auto) {
+intercept = function (ctx, fn, auto) {
   var auto = auto || true;
   var stub = false;
   var f = layer._find_context(ctx, fn, 0);
@@ -20,5 +20,5 @@ testing123 = function (ctx, fn, auto) {
     return stub;
   };
 }
-if (env === 'node') module.exports = testing123;
+if (env === 'node') module.exports = intercept;
 })();
