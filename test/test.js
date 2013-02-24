@@ -12,12 +12,12 @@ describe('testing123', function() {
     }
     var stub = testing123(ctx, ctx.hi);
     // stays false until ctx.hi is called
-    stub.should.be.equal(false);
+    stub().should.be.equal(false);
 
     ctx.hi(1, 2, 3);
 
     // once called it populates with some information
-    stub.should.eql({called: true, arguments: [1,2,3] });
+    stub().should.eql({called: true, arguments: [1,2,3] });
 
     // the stubbed function automatically resets after the stub is called
     var error = false;

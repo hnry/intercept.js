@@ -1,5 +1,6 @@
 {
   "name": "testing-testing-1-2-3",
+  "private": false,
   "version": "0.0.1",
   "description": "ERROR: No README.md file found!",
   "main": "index.js",
