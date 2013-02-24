@@ -4,22 +4,22 @@ var layer = require('layer')
 
 describe('intercept', function() {
 
-  it('stubs', function() {
+  it('intercepts stuff', function() {
     var ctx = {
       hi: function(x, y, z) {
         throw new Error('hi got called');
       }
     }
-    var stub = intercept(ctx, ctx.hi);
+    var result = intercept(ctx, ctx.hi);
     // stays false until ctx.hi is called
-    stub().should.be.equal(false);
+    result().should.be.equal(false);
 
     ctx.hi(1, 2, 3);
 
     // once called it populates with some information
-    stub().should.eql({called: true, arguments: [1,2,3] });
+    result().should.eql({called: true, arguments: [1,2,3] });
 
-    // the stubbed function automatically resets after the stub is called
+    // the intercepted function automatically resets after the result is called
     var error = false;
     try {
       ctx.hi(1, 2, 3);
@@ -29,8 +29,23 @@ describe('intercept', function() {
     error.should.be.equal(true);
   });
 
-  it('manually reset stub', function() {
+  it('calls intercepting func if there is one', function(done) {
+    var ctx = {
+      hi: function(x, y, z) {
+        throw new Error('hi got called');
+      }
+    }
 
+    var intercepting = function(result2) {
+      result().should.eql({called: true, arguments: [1,2,3] });
+      result2.should.eql({called: true, arguments: [1,2,3] });
+      done();
+    }
+
+    var result = intercept(ctx, ctx.hi, intercepting);
+    // stays false until ctx.hi is called
+    result().should.be.equal(false);
+    ctx.hi(1, 2, 3);
   });
 
 });

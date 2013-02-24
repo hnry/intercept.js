@@ -6,7 +6,7 @@
   "main": "index.js",
   "keywords": ["proxy", "transparent", "proxies", "intercept", "mock", "mocking", "testing", "test"],
   "dependencies": {
-    "layer": "*"
+    "layer": "> 0.0.2"
   },
   "devDependencies": {
     "mocha": "*",
