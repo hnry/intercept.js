@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "elegantly intercept a function",
   "main": "index.js",
+  "keywords": ["proxy", "transparent", "proxies", "intercept", "mock", "mocking", "testing", "test"],
   "dependencies": {
     "layer": "*"
   },
@@ -16,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lovebear/testing-testing-1-2-3.git"
+    "url": "git://github.com/lovebear/intercept.js.git"
   },
   "author": "lovebear",
   "license": "BSD",

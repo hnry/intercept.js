@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lovebear/intercept.js.png)](https://travis-ci.org/lovebear/intercept.js)
+
 # intercept.js
 
 small library to intercept a function from being called without modifying the function. or messing with your existing code.
@@ -25,29 +27,29 @@ The 'this' of `function_to_intercept`
 
 Example for using it to setup mocks for tests:
 ```js
-    // real function to mock / test
-    function Cat() {}
-    Cat.prototype.give = function(something) {
-        if (something === 'catnip') throw new Error('CAT NIP!!!')
-    }
+// real function to mock / test
+function Cat() {}
+Cat.prototype.give = function(something) {
+    if (something === 'catnip') throw new Error('CAT NIP!!!')
+}
 
-    // start test
-    // setup intercept, result is 'false'
-    var result = intercept(Cat.prototype, Cat.prototype.give);
+// start test
+// setup intercept, result is 'false'
+var result = intercept(Cat.prototype, Cat.prototype.give);
 
-    var cat = new Cat();
+var cat = new Cat();
 
-    // call like normal, it gets intercepted, no error thrown
-    cat.give('catnip');
+// call like normal, it gets intercepted, no error thrown
+cat.give('catnip');
 
-    // result() is now populated
-    assert(result).is.eql({called: true, arguments: ['catnip'] })
+// result() is now populated
+assert(result).is.eql({called: true, arguments: ['catnip'] })
 
-    // it resets your function back to normal
-    // so when called again, this will throw the error
-    cat.give();
+// it resets your function back to normal
+// so when called again, this will throw the error
+cat.give();
 
-    // ( basically you don't have reset the mock or do anything else! )
+// ( basically you don't have reset the mock or do anything else! )
 ```
 
 ### Installing
