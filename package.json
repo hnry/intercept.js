@@ -1,0 +1,23 @@
+{
+  "name": "testing-testing-1-2-3",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lovebear/testing-testing-1-2-3.git"
+  },
+  "dependency": {
+    "layer": "*"
+  },
+  "devDependency": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "author": "lovebear",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
