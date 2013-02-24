@@ -6,6 +6,7 @@ small library to intercept a function from being called without modifying the fu
 
 - can be used set up mocks for tests `var called = intercept(this, testFunction)`
 - or something like, `if (unexpected_error) intercept(this, save_to_db, recover)`
+- or just intercepting stuff!
 
 ### How to use
 
@@ -25,7 +26,9 @@ The 'this' of `function_to_intercept`
 (optional) will be called when `function_to_intercept` is called
 
 
-Example for using it to setup mocks for tests:
+### Example 
+(for using it to setup mocks for tests)
+
 ```js
 // real function to mock / test
 function Cat() {}
