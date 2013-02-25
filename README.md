@@ -46,7 +46,7 @@ var cat = new Cat();
 cat.give('catnip');
 
 // result() is now populated
-assert(result).is.eql({called: true, arguments: ['catnip'] })
+assert(result).is.eql({called: true, args: ['catnip'] })
 
 // it resets your function back to normal
 // so when called again, this will throw the error

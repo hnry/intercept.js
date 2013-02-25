@@ -17,7 +17,7 @@ describe('intercept', function() {
     ctx.hi(1, 2, 3);
 
     // once called it populates with some information
-    result().should.eql({called: true, arguments: [1,2,3] });
+    result().should.eql({called: true, args: [1,2,3] });
 
     // the intercepted function automatically resets after the result is called
     var error = false;
@@ -37,8 +37,8 @@ describe('intercept', function() {
     }
 
     var intercepting = function(result2) {
-      result().should.eql({called: true, arguments: [1,2,3] });
-      result2.should.eql({called: true, arguments: [1,2,3] });
+      result().should.eql({called: true, args: [1,2,3] });
+      result2.should.eql({called: true, args: [1,2,3] });
       done();
     }
 
