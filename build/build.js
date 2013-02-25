@@ -4,11 +4,11 @@
 
 var fs = require('fs')
   , layer = require('layer')
-  , intercept = require('./index');
+  , intercept = require('../index');
 
-var ws = fs.createWriteStream('./intercept.dist.js');
+var ws = fs.createWriteStream('./build/intercept.dist.js');
 
-ws.write('\'use strict\';\n');
+//ws.write('\'use strict\';\n');
 ws.write('var intercept;');
 ws.write('(function() {\n');
 

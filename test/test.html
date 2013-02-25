@@ -1,0 +1,17 @@
+<script src="../intercept.min.js"></script>
+
+<script>
+
+// don't pollute namespace
+if (this.layer) throw new Error('build failed')
+
+var interceptThis = function() {
+  throw new Error('failed to intercept');
+}
+
+var result = intercept(this, interceptThis);
+
+interceptThis('hi');
+if (result().args[0] !== 'hi') throw new Error('didn\'t get proper arg on intercept');
+
+</script>

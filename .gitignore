@@ -1,3 +1,5 @@
 node_modules
 npm-debug.log
 intercept*.tgz
+.DS_Store
+intercept.dist.js
