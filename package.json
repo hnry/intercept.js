@@ -1,7 +1,7 @@
 {
   "name": "intercept.js",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "elegantly intercept a function",
   "main": "index.js",
   "keywords": ["proxy", "transparent", "proxies", "intercept", "mock", "mocking", "testing", "test"],
@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "mocha": "*",
+    "uglify-js": "*",
     "should": "*"
   },
   "scripts": {

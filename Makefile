@@ -1,3 +1,6 @@
+release:
+		make dist; make pack
+
 dist:
 		node build/build.js
 		echo "// Copyright lovebear https://github.com/lovebear/intercept.js" > intercept.min.js
