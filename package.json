@@ -1,12 +1,12 @@
 {
   "name": "intercept.js",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "elegantly intercept a function",
   "main": "index.js",
   "keywords": ["proxy", "transparent", "proxies", "intercept", "mock", "mocking", "testing", "test"],
   "dependencies": {
-    "layer": "> 0.0.2"
+    "layer": "=0.0.7"
   },
   "devDependencies": {
     "mocha": "*",

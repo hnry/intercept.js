@@ -14,6 +14,7 @@ ws.write('(function() {\n');
 
 ws.write('var layer = {};');
 ws.write('layer._find_context = ' + layer._find_context.toString() + '\n');
+ws.write('layer._call = ' + layer._call.toString() + '\n');
 ws.write('layer.set = ' + layer.set.toString() + '\n');
 ws.write('layer.unset = ' + layer.unset.toString() + '\n');
 ws.write('layer.Stop = ' + layer.Stop.toString() + '\n');

@@ -14,4 +14,12 @@ var result = intercept(this, interceptThis);
 interceptThis('hi');
 if (result().args[0] !== 'hi') throw new Error('didn\'t get proper arg on intercept');
 
+var err = false;
+try {
+  interceptThis('hi')
+} catch(e) {
+  err = true;
+}
+if (!err) throw new Error('failed to reset interceptThis')
+
 </script>
