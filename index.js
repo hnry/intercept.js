@@ -21,9 +21,22 @@ exports.intercept = function (ctx, fn, interceptFn) {
     return new layer.Stop();
   });
 
-  return function() {
+  var resultFn = function() {
     return result;
-  };
+  }
+
+  resultFn.reset = function() {
+    var status = true;
+    try {
+      layer.unset(f[0][f[1]]);
+    } catch(e) {
+      status = false;
+    }
+    return status;
+  }
+
+  return resultFn;
 }
+
 if (env === 'node') module.exports = exports.intercept;
 })();

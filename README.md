@@ -25,6 +25,18 @@ The 'this' of `function_to_intercept`
 `listenerFunction`:
 (optional) will be called when `function_to_intercept` is called
 
+#### Resetting
+
+Given:
+
+`var called = intercept(context, function_to_intercept, listenerFunction)
+`
+
+`called.reset();`
+
+Will reset an interception back to the original function. Useful only for when a function was never called and you want to reset it.
+
+For all other cases intercept.js will auto reset.
 
 ### Example 
 (for using it to setup mocks for tests)

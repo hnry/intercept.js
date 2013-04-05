@@ -48,4 +48,29 @@ describe('intercept', function() {
     ctx.hi(1, 2, 3);
   });
 
+  it('resets the interception', function() {
+    var ctx = {
+      hi: function(x, y, z) {
+        throw new Error('hi got called');
+      }
+    }
+    var result = intercept(ctx, ctx.hi);
+    // stays false until ctx.hi is called
+    result().should.be.equal(false);
+
+    // reset the interception
+    result.reset();
+
+    var error = false;
+    try {
+      ctx.hi(1, 2, 3);
+    } catch(e) {
+      error = true;
+    }
+    error.should.be.equal(true);
+
+    // calling reset again does nothing
+    result.reset();
+  });
+
 });

@@ -1,3 +1,6 @@
+test:
+		@mocha -R spec
+
 release:
 		make dist; make pack
 
@@ -11,3 +14,5 @@ dist:
 pack:
 		rm -rf package; rm -rf intercept*.tgz; 
 		npm pack .
+
+.PHONY: test
